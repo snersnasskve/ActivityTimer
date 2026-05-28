@@ -1,6 +1,7 @@
 package com.snersbots.activitytimer
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -12,6 +13,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+       // If you decide to turn screen off then:
+        //clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON).
+
         setContent {
             WorkoutApp()
         }
@@ -23,6 +28,9 @@ class MainActivity : ComponentActivity() {
 fun WorkoutApp() {
     MaterialTheme {
         WorkoutScreen()
+
+        //* Up To *//
+        //Recommended Architecture For Your App
     }
 }
 

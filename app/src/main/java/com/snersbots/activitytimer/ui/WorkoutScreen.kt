@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -16,6 +17,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -46,19 +48,29 @@ fun WorkoutScreen() {
         OutlinedTextField(
             value = exerciseSeconds,
             onValueChange = { exerciseSeconds = it },
-            label = { Text("Exercise Seconds") }
+            label = { Text("Exercise Seconds") },
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Number
+            )
+
         )
 
         OutlinedTextField(
             value = restSeconds,
             onValueChange = { restSeconds = it },
-            label = { Text("Rest Seconds") }
+            label = { Text("Rest Seconds") },
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Number
+            )
         )
 
         OutlinedTextField(
             value = numReps,
             onValueChange = { numReps = it },
-            label = { Text("Number of Reps") }
+            label = { Text("Number of Reps") },
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Number
+            )
         )
 
         Spacer(modifier = Modifier.height(24.dp))

@@ -1,5 +1,12 @@
 package com.snersbots.activitytimer.viewmodel
 
+/**
+ * Contains:
+ *
+ * timer state
+ * coroutine logic
+ * state machine
+ */
 enum class Phase {
     REST,
     EXERCISE,
